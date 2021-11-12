@@ -7,7 +7,7 @@
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\diego\\AppData\\Local\\Arduino15\\packages\\arduboy-homemade\\hardware\\avr\\1.2.9\\variants\\arduboy-promicro"
+    "Includepath": "C:\\Users\\diego\\AppData\\Local\\Arduino15\\packages\\arduboy-homemade\\hardware\\avr\\1.2.9\\variants\\arduboy-promicro-alt"
   },
   {
     "Sourcefile": "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\build\\sketch\\cooties.ino.cpp",
