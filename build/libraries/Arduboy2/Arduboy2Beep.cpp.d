@@ -12,6 +12,6 @@ c:\Users\diego\OneDrive\Escritorio\arduboy\build\libraries\Arduboy2\Arduboy2Beep
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Arduino.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/USBDesc.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/USBCore.h \
- C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-promicro-alt/pins_arduino.h \
+ C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-promicro/pins_arduino.h \
  c:\users\diego\appdata\local\arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-leonardo\pins_arduino.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src\Arduboy2Beep.h

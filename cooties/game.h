@@ -5,6 +5,9 @@ Arduboy2 arduboy;
 Sprites sprite;
 
  bool facingUp;
+ bool facingDown;
+ bool facingLeft;
+ bool facingRight;
 
 
  Characters hero;
@@ -62,22 +65,36 @@ void input(){
         if (hero.y>0){
             hero.y--;
             facingUp = true;
+            facingDown = false;
+            facingLeft = false;
+            facingRight= false;
         };
     }
     if (arduboy.pressed(DOWN_BUTTON)){
         if (hero.y<arduboy.height()-hero.h){
             hero.y++;
             facingUp = false;
+            facingDown = true;
+            facingLeft = false;
+            facingRight= false;
         };
     }
     if (arduboy.pressed(LEFT_BUTTON)){
         if (hero.x>0){
             hero.x--;
+            facingUp = false;
+            facingDown = false;
+            facingLeft = true;
+            facingRight= false;
         };
     }
     if (arduboy.pressed(RIGHT_BUTTON)){
         if (hero.x<arduboy.width()-hero.w){
             hero.x++;
+            facingUp = false;
+            facingDown = false;
+            facingLeft = false;
+            facingRight= true;
         };
     }
 
@@ -100,6 +117,7 @@ void initBullets(){
     bullet[bulletNum].x = bulletOff;
     bullet[bulletNum].width = bulletSize;
     bullet[bulletNum].height = bulletSize;
+    
   }
 }
 
@@ -107,11 +125,29 @@ void initBullets(){
 
 void moveBullets() {
   for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
+      
     if (bullet[bulletNum].x != bulletOff) { // If bullet in use
-      ++bullet[bulletNum].x; // move bullet right
+      
+    if (facingRight){
+        ++bullet[bulletNum].x; // move bullet right
+      }
+      if (facingLeft){
+        --bullet[bulletNum].x; // move bullet left
+      }
     }
-    if (bullet[bulletNum].x >= arduboy.width()) { // If off screen
-      bullet[bulletNum].x = bulletOff;  // Set bullet as unused
+    
+    if (bullet[bulletNum].y != bulletOff) {
+      if (facingDown){
+        ++bullet[bulletNum].y; // move bullet down
+      }
+      if (facingUp){
+        --bullet[bulletNum].y; // move bullet up
+      }
+
+      if (bullet[bulletNum].x >= arduboy.width() or (bullet[bulletNum].x == 0)
+          or bullet[bulletNum].y >= arduboy.height() or (bullet[bulletNum].y == 0)) { // If off screen
+        bullet[bulletNum].x = bulletOff;  // Set bullet as unused
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ c:\Users\diego\OneDrive\Escritorio\arduboy\build\core\HardwareSerial2.cpp.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\USBAPI.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\USBDesc.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\USBCore.h \
- C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-promicro-alt/pins_arduino.h \
+ C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-promicro/pins_arduino.h \
  c:\users\diego\appdata\local\arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-leonardo\pins_arduino.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\HardwareSerial_private.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\wiring_private.h
