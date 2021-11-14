@@ -3,7 +3,7 @@
 
 #include "general.h"
 
-struct Bullets{
+/*struct Bullets{
 
    uint8_t x = 0;
    uint8_t y = 0;
@@ -14,7 +14,7 @@ struct Bullets{
         y += ya * speed;
     };
 
-};
+};*/ //just another idea 
 
 constexpr uint8_t bulletSize = 3; // Size of a square bullet
 constexpr uint8_t bullets = 5;    // Maximum number of bullets
