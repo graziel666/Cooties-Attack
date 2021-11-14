@@ -65,37 +65,25 @@ void input(){
     if (arduboy.pressed(UP_BUTTON)){
         if (hero.y>0){
             hero.y--;
-            facingUp = true;
-            facingDown = false;
-            facingLeft = false;
-            facingRight= false;
+            hero.direction = Direction::Up;
         };
     }
     if (arduboy.pressed(DOWN_BUTTON)){
         if (hero.y<arduboy.height()-hero.h){
             hero.y++;
-            facingUp = false;
-            facingDown = true;
-            facingLeft = false;
-            facingRight= false;
+            hero.direction = Direction::Down;
         };
     }
     if (arduboy.pressed(LEFT_BUTTON)){
         if (hero.x>0){
             hero.x--;
-            facingUp = false;
-            facingDown = false;
-            facingLeft = true;
-            facingRight= false;
+            hero.direction = Direction::Left;
         };
     }
     if (arduboy.pressed(RIGHT_BUTTON)){
         if (hero.x<arduboy.width()-hero.w){
             hero.x++;
-            facingUp = false;
-            facingDown = false;
-            facingLeft = false;
-            facingRight= true;
+            hero.direction = Direction::Right;
         };
     }
 
@@ -104,6 +92,8 @@ void input(){
       uint8_t bulletNum = findUnusedBullet();
       if (bulletNum != bullets) { // If we get an unused bullet
         // Set the start position. (A positive X indicates bullet in use)
+        bullet[bulletNum].direction = hero.direction;
+
         bullet[bulletNum].x = hero.x;
         bullet[bulletNum].y = hero.y + 3; // Part way down the player
         waitCount = bulletWait; // Start the delay counter for the next bullet
@@ -124,33 +114,48 @@ void initBullets(){
 
 
 
-void moveBullets() {
-  for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
-      
-    if (bullet[bulletNum].x != bulletOff) { // If bullet in use
-      
-    if (facingRight){
-        ++bullet[bulletNum].x; // move bullet right
-      }
-      if (facingLeft){
-        --bullet[bulletNum].x; // move bullet left
-      }
-    }
-    
-    if (bullet[bulletNum].y != bulletOff) {
-      if (facingDown){
-        ++bullet[bulletNum].y; // move bullet down
-      }
-      if (facingUp){
-        --bullet[bulletNum].y; // move bullet up
-      }
+void moveBullets()
+{
+	for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum)
+	{
 
-      if (bullet[bulletNum].x >= arduboy.width() or (bullet[bulletNum].x == 0)
-          or bullet[bulletNum].y >= arduboy.height() or (bullet[bulletNum].y == 0)) { // If off screen
-        bullet[bulletNum].x = bulletOff;  // Set bullet as unused
-      }
-    }
-  }
+    
+		// If bullet in use
+		if (bullet[bulletNum].x != bulletOff)
+		{
+			if(bullet[bulletNum].direction == Direction::Right)
+			{
+				// move bullet right
+				++bullet[bulletNum].x;
+			}
+			
+			if(bullet[bulletNum].direction == Direction::Left)
+			{
+				// move bullet left
+				--bullet[bulletNum].x;
+			}
+			
+			if(bullet[bulletNum].direction == Direction::Up)
+			{
+				// move bullet up
+				--bullet[bulletNum].y;
+			}
+			
+			if(bullet[bulletNum].direction == Direction::Down)
+			{
+				// move bullet down
+				++bullet[bulletNum].y;
+			}
+			
+			// If off screen
+			if (bullet[bulletNum].x >= arduboy.width() || (bullet[bulletNum].x == 0)
+			|| bullet[bulletNum].y >= arduboy.height() || (bullet[bulletNum].y == 0))
+			{ 
+				// Set bullet as unused
+				bullet[bulletNum].x = bulletOff;
+			}
+		}
+	}
 }
 
 
@@ -164,11 +169,11 @@ void drawBullets() {
   }
 }
 
-void checkBullets() {
+/*void checkBullets() {
   for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
     if (arduboy.collide(bullet[bulletNum], target)) {
       ++hitCount;
       bullet[bulletNum].x = bulletOff;  // Set bullet as unused
     }
   }
-}
+}*/

@@ -43,7 +43,9 @@ void loop()
     arduboy.drawRect(target.x, target.y, targetWidth, targetHeight);
     sprite.drawPlusMask(cootie.x,cootie.y,cootie_sp, cootie.frame);
 
-    checkBullets();
+    //checkBullets();
+
+
 
     //just test
     arduboy.setCursor(0, 0);
