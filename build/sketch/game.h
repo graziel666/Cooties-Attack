@@ -5,17 +5,17 @@
 Arduboy2 arduboy;
 Sprites sprite;
 
- bool facingUp;
- bool facingDown;
- bool facingLeft;
- bool facingRight;
 
 
  Characters hero;
  Characters cootie;
  //Bullets bullet; 
+
+
+bool facingUp;
  
 uint16_t hitCount = 0;
+uint16_t enemyHit = 0;
 
 uint8_t findUnusedBullet() {
   uint8_t bulletNum;
@@ -66,12 +66,14 @@ void input(){
         if (hero.y>0){
             hero.y--;
             hero.direction = Direction::Up;
+            facingUp =  true;
         };
     }
     if (arduboy.pressed(DOWN_BUTTON)){
         if (hero.y<arduboy.height()-hero.h){
             hero.y++;
             hero.direction = Direction::Down;
+            facingUp = false;
         };
     }
     if (arduboy.pressed(LEFT_BUTTON)){
@@ -89,10 +91,13 @@ void input(){
 
     if (arduboy.pressed(A_BUTTON)) {
     if (waitCount == 0) {
+      
       uint8_t bulletNum = findUnusedBullet();
       if (bulletNum != bullets) { // If we get an unused bullet
         // Set the start position. (A positive X indicates bullet in use)
-        bullet[bulletNum].direction = hero.direction;
+
+        //bullet[bulletNum].direction = hero.direction; //uncomment this to fix the bug
+
 
         bullet[bulletNum].x = hero.x;
         bullet[bulletNum].y = hero.y + 3; // Part way down the player
@@ -118,8 +123,8 @@ void moveBullets()
 {
 	for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum)
 	{
-
-    
+    //this is the bug
+    bullet[bulletNum].direction = hero.direction;
 		// If bullet in use
 		if (bullet[bulletNum].x != bulletOff)
 		{
@@ -169,11 +174,37 @@ void drawBullets() {
   }
 }
 
-/*void checkBullets() {
+void checkBullets() {
+
+  Rect Hero(hero.x, hero.y, hero.w, hero.h);
+
+  Rect target(cootie.x, cootie.y, targetWidth, targetHeight);
+
+  //check if enemy touch the hero
+  if (arduboy.collide(target,Hero)&& hero.iframe==0){
+    ++enemyHit;
+    hero.iframe=50;
+  }
+
+  //check if bullet hit the enemy
   for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
     if (arduboy.collide(bullet[bulletNum], target)) {
       ++hitCount;
       bullet[bulletNum].x = bulletOff;  // Set bullet as unused
     }
   }
-}*/
+}
+
+
+void animEnemy(){
+  if(arduboy.everyXFrames(10)){
+    if (cootie.x<hero.x){
+      cootie.x++;
+    }else{ cootie.x--;}
+
+    if (cootie.y<hero.y){
+      cootie.y++;
+    }else{ cootie.y--;}
+  }
+
+}

@@ -2,29 +2,36 @@
 
 #include "general.h"
 
+
 enum class Direction : uint8_t
 {
 	Up, Right, Down, Left
 };
 
-struct Bullets
+struct Bullet:Rect
 {
-	int16_t x;
-	int16_t y;
-	uint8_t width;
-	uint8_t height;
 	Direction direction;
 };
 
+
+
 constexpr uint8_t bulletSize = 3; // Size of a square bullet
 constexpr uint8_t bullets = 5;    // Maximum number of bullets
-constexpr uint8_t bulletWait = 6; // Minimum frames between firing
+constexpr uint8_t bulletWait = 10; // Minimum frames between firing
 constexpr int bulletOff = -1;     // "Bullet not in use" value;
+
+
 
 // For counting the minimum number of frames between bullets
 uint8_t waitCount = 0;
 
-Bullets bullet[bullets];
+Bullet bullet[bullets];
+
+/*struct  Bullets
+{
+    Direction direction;
+};
+Bullets test;*/
 
 //enemies
 // Target definitions
@@ -33,7 +40,7 @@ constexpr uint8_t targetHeight = 8;
  uint8_t targetX = 120;
  uint8_t targetY = 30;
 
-Rect target(targetX, targetY, targetWidth, targetHeight);
+
 
 struct Characters
 {   
@@ -42,10 +49,12 @@ struct Characters
     uint8_t x=64;
     uint8_t y=32;
 
-    uint8_t speed = 2;
-    uint8_t frame = 0;
+    uint8_t iframe=50;
 
     Direction direction;
+
+    uint8_t speed = 2;
+    uint8_t frame = 0;
 
     void move(uint8_t xa, uint8_t ya){
         x += xa * speed;
