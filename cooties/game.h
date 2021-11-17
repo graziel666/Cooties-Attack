@@ -6,8 +6,7 @@ Sprites sprite;
 
 
 
- Characters hero;
- Characters cootie;
+ 
  //Bullets bullet; 
 
 
@@ -45,13 +44,14 @@ void anim(){
             };
         }
 
-    if(arduboy.everyXFrames(5)){
-            cootie.frame++;
-        };
-    if (cootie.frame >=2){
-        cootie.frame=0;
-    };
-
+    for (uint8_t i = 0; i < 10; i++){
+      if(arduboy.everyXFrames(5)){
+              cootie[i].frame++;
+          };
+      if (cootie[i].frame >=2){
+          cootie[i].frame=0;
+      };
+    }
 }
 //controls
 void input(){
@@ -177,13 +177,16 @@ void checkBullets() {
 
   Rect Hero(hero.x, hero.y, hero.w, hero.h);
 
-  Rect target(cootie.x, cootie.y, targetWidth, targetHeight);
+  for (uint8_t i = 0; i < 10; i++){
+    Rect target(cootie[i].x, cootie[i].y, targetWidth, targetHeight);
 
   //check if enemy touch the hero
-  if (arduboy.collide(target,Hero)&& hero.iframe==0){
-    ++enemyHit;
-    hero.iframe=50;
-  }
+    if (arduboy.collide(target,Hero)&& hero.iframe==0){
+      ++enemyHit;
+      hero.iframe=50;
+    }
+  
+
 
   //check if bullet hit the enemy
   for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
@@ -192,18 +195,21 @@ void checkBullets() {
       bullet[bulletNum].x = bulletOff;  // Set bullet as unused
     }
   }
+  } //test
+
 }
 
 
 void animEnemy(){
-  if(arduboy.everyXFrames(10)){
-    if (cootie.x<hero.x){
-      cootie.x++;
-    }else{ cootie.x--;}
+  for (uint8_t i = 0; i < 10; i++){
+    if(arduboy.everyXFrames(10)){
+      if (cootie[i].x<hero.x){
+        cootie[i].x++;
+      }else{ cootie[i].x--;}
 
-    if (cootie.y<hero.y){
-      cootie.y++;
-    }else{ cootie.y--;}
+      if (cootie[i].y<hero.y){
+        cootie[i].y++;
+      }else{ cootie[i].y--;}
+    }
   }
-
 }

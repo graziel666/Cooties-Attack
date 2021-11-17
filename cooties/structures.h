@@ -61,3 +61,6 @@ struct Characters
         y += ya * speed;
     };
 };
+
+Characters hero;
+Characters cootie[10];

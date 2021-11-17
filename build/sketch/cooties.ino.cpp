@@ -18,8 +18,8 @@ void setup()
 
     initBullets();
 
-    cootie.x=120;
-    cootie.y=30;
+    /*cootie.x=120;
+    cootie.y=30;*/
     
     
 }
@@ -47,15 +47,15 @@ void loop()
       --hero.iframe;
     }
 
-    targetX = cootie.x;
-    targetY = cootie.y;
     //draw
     sprite.drawPlusMask(hero.x,hero.y,hero_sp, hero.frame);
 
     //test
     //arduboy.drawRect(targetX, targetY, targetWidth+5, targetHeight+5);
-    sprite.drawPlusMask(cootie.x,cootie.y,cootie_sp, cootie.frame);
 
+    for (uint8_t i = 0; i < 10; i++){
+      sprite.drawPlusMask(cootie[i].x,cootie[i].y,cootie_sp, cootie[i].frame);
+    };
     checkBullets();
 
     //just test

@@ -27,4 +27,5 @@ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\cooties.ino.cpp.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Print.h \
  c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\sprites.h \
  c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\structures.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\game.h
+ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\game.h \
+ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\enemy.h
