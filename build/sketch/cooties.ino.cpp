@@ -33,10 +33,11 @@ void loop()
 
     input();
 
-    animEnemy();
+    drawCooties();
+    moveEnemy();
+    
     
     moveBullets();
-    
     drawBullets();
 
     if (waitCount != 0) {
@@ -53,10 +54,9 @@ void loop()
     //test
     //arduboy.drawRect(targetX, targetY, targetWidth+5, targetHeight+5);
 
-    for (uint8_t i = 0; i < 10; i++){
-      sprite.drawPlusMask(cootie[i].x,cootie[i].y,cootie_sp, cootie[i].frame);
-    };
-    checkBullets();
+    
+
+    checkCollisions();
 
     //just test
     arduboy.setCursor(0, 0);
@@ -65,6 +65,8 @@ void loop()
     arduboy.print(enemyHit);
     arduboy.setCursor(0, 16);
     arduboy.print(hero.iframe);
+    arduboy.setCursor(0, 24);
+    //arduboy.print(cootie->collide);
 
     arduboy.display();
 }
