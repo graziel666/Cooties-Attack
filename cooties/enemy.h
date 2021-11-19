@@ -17,7 +17,7 @@ const int16_t yStart[48] = { -8, -8, -8, -8, -8, -8, -8, -8, -8, -8,  // Top
 
 
 void drawCooties(){
-    for (uint8_t i = 0; i < 10; i++) {
+    for (uint8_t i = 0; i < targets; i++) {
         if (!cootie[i].enable) {
             uint8_t pos = random(0, 48);
             cootie[i].enable = true;  
@@ -27,7 +27,7 @@ void drawCooties(){
         }
     }
     
-    for (uint8_t i = 0; i < 10; i++){
+    for (uint8_t i = 0; i < targets; i++){
       sprite.drawPlusMask(cootie[i].x,cootie[i].y,cootie_sp, cootie[i].frame);
     }
     
@@ -36,17 +36,35 @@ void drawCooties(){
 void moveEnemy(){
 
 
-  for (uint8_t i = 0; i < 10; i++){
-    if(arduboy.everyXFrames(10)){
-    
-            if (cootie[i].x<hero.x){
-                cootie[i].x++;
-            }else{ cootie[i].x--;}
+  if(arduboy.everyXFrames(15)){
+      for (uint8_t i = 0; i < targets; i++) {
+          for (uint8_t j = 0; j < targets; j++) {
+              if (i != j) {
+                  if (!arduboy.collide(cootie[i], cootie[j])) {
 
-            if (cootie[i].y<hero.y){
-                cootie[i].y++;
-            }else{ cootie[i].y--;}
-    
-    }
+                    if (cootie[i].x<hero.x){
+                        cootie[i].x++;
+                    }else{ cootie[i].x--;}
+
+                    if (cootie[i].y<hero.y){
+                        cootie[i].y++;
+                    }else{ cootie[i].y--;}
+                
+        
+                  } else{
+                      //cootie[i].enable=false;
+                      cootie[i].x=cootie[i].x-4;
+                      cootie[j].x=cootie[j].x+4;
+                      cootie[i].y=cootie[i].y-4;
+                      cootie[j].y=cootie[j].y+4;
+                    }
+              }
+          }
+      }
   }
 }
+
+
+
+
+

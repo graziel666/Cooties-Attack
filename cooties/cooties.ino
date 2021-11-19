@@ -10,9 +10,16 @@ void setup()
     arduboy.display();
 
     initBullets();
+    initEnemies();
 
-    /*cootie.x=120;
-    cootie.y=30;*/
+    hero.x=64;
+    hero.y=32;
+    hero.width=8;
+    hero.height=8;
+
+    hitCount=0;
+
+    level = 1;
     
     
 }
@@ -50,15 +57,25 @@ void loop()
     
 
     checkCollisions();
+    //enemyHealth();
 
     //just test
+
+    //points
     arduboy.setCursor(0, 0);
+    arduboy.print("points: ");
+    arduboy.setCursor(8*6, 0);
     arduboy.print(hitCount);
+    //life
     arduboy.setCursor(0, 8);
-    arduboy.print(enemyHit);
+    arduboy.print("Life: ");
+    arduboy.setCursor(8*6, 8);
+    arduboy.print(hero.life);
+    //level
     arduboy.setCursor(0, 16);
-    arduboy.print(hero.iframe);
-    arduboy.setCursor(0, 24);
+    arduboy.print("level");
+    arduboy.setCursor(8*6, 16);
+    arduboy.print(level);
     //arduboy.print(cootie->collide);
 
     arduboy.display();

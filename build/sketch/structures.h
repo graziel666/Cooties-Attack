@@ -22,20 +22,14 @@ constexpr uint8_t bulletWait = 10; // Minimum frames between firing
 constexpr int bulletOff = -1;     // "Bullet not in use" value;
 
 
-constexpr uint8_t targets = 10;    // Maximum number of targets
-
+constexpr uint8_t maxTargets = 5;    // Maximum number of target
+uint8_t targets = 2;
+uint8_t maxLife=3;
 // For counting the minimum number of frames between bullets
 uint8_t waitCount = 0;
 
 Bullet bullet[bullets];
 
-//Rect target[targets];
-
-/*struct  Bullets
-{
-    Direction direction;
-};
-Bullets test;*/
 
 //enemies
 // Target definitions
@@ -46,12 +40,12 @@ constexpr uint8_t targetHeight = 8;
 
 
 
-struct Characters
+struct Characters:Rect
 {   
-    uint8_t w=8;
+    /*uint8_t w=8;
     uint8_t h=8;
     int16_t x=64;
-    int16_t y=32;
+    int16_t y=32;*/
 
     uint8_t iframe=50;
 
@@ -63,11 +57,13 @@ struct Characters
     uint8_t speed = 2;
     uint8_t frame = 0;
 
-    void move(uint8_t xa, uint8_t ya){
-        x += xa * speed;
-        y += ya * speed;
-    };
+    int8_t life = 3;
+
 };
 
 Characters hero;
-Characters cootie[targets];
+constexpr uint8_t heroWidth = 8;
+constexpr uint8_t heroHeight = 8;
+
+
+Characters cootie[maxTargets];

@@ -6,6 +6,7 @@ Arduboy2 arduboy;
 Sprites sprite;
 
 
+uint8_t level=0;
 
  
  //Bullets bullet; 
@@ -70,7 +71,7 @@ void input(){
         };
     }
     if (arduboy.pressed(DOWN_BUTTON)){
-        if (hero.y<arduboy.height()-hero.h){
+        if (hero.y<arduboy.height()-heroHeight){
             hero.y++;
             hero.direction = Direction::Down;
             facingUp = false;
@@ -83,7 +84,7 @@ void input(){
         };
     }
     if (arduboy.pressed(RIGHT_BUTTON)){
-        if (hero.x<arduboy.width()-hero.w){
+        if (hero.x<arduboy.width()-heroWidth){
             hero.x++;
             hero.direction = Direction::Right;
         };
@@ -113,6 +114,15 @@ void initBullets(){
     bullet[bulletNum].x = bulletOff;
     bullet[bulletNum].width = bulletSize;
     bullet[bulletNum].height = bulletSize;
+    
+  }
+}
+void initEnemies(){
+      // Init all the enemies
+  for (uint8_t i = 0; i < targets; ++i) {
+    cootie[i].width = 9;
+    cootie[i].height = 9;
+    cootie[i].enable = false;
     
   }
 }
@@ -174,30 +184,71 @@ void drawBullets() {
   }
 }
 
+void setLevel(){
+  if (level ==5 && targets < maxTargets) {
+    ++targets;
+  }
+  if (level ==10 && targets < maxTargets) {
+    ++targets;
+  }
+  /*if (level ==15 && targets < maxTargets) {
+    ++targets;
+  }
+  if (level ==20 && targets < maxTargets) {
+    ++targets;
+  }*/
+}
+
 void checkCollisions() {
+  for (uint8_t i = 0; i < targets; i++){
 
-  Rect Hero(hero.x, hero.y, hero.w, hero.h);
+    if (cootie[i].life<=0){
+          setLevel();
+          cootie[i].enable=false;
+          
+          if (maxLife<6){
+            ++maxLife;
+          }
+          
+          ++level;
+          
+          
+          cootie[i].life =maxLife;
+        }
 
-  for (uint8_t i = 0; i < 10; i++){
-     Rect target(cootie[i].x, cootie[i].y, targetWidth, targetHeight);
 
   //check if enemy touch the hero
-    if (arduboy.collide(target,Hero)&& hero.iframe==0){
+    if (arduboy.collide(cootie[i],hero)&& hero.iframe==0){
       ++enemyHit;
       hero.iframe=50;
+      if (hero.life>0){
+        --hero.life;
+        if (hitCount>10){
+          hitCount = hitCount-10;
+        }
+      }
+        
     }
-
   
+
+    
 
   //check if bullet hit the enemy
     for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
-      if (arduboy.collide(bullet[bulletNum], target)) {
+      if (hero.iframe==0 && arduboy.collide(bullet[bulletNum], cootie[i])) {
         ++hitCount;
+        --cootie[i].life;
         bullet[bulletNum].x = bulletOff;  // Set bullet as unused
+
+        
+        
+
       }
     }
   } //test
 
 }
+
+
 
 
