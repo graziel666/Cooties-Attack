@@ -22,7 +22,7 @@ constexpr int bulletOff = -1;     // "Bullet not in use" value;
 
 
 constexpr uint8_t maxTargets = 5;    // Maximum number of target
-uint8_t targets = 2;
+uint8_t targets = 4;
 uint8_t maxLife=3;
 // For counting the minimum number of frames between bullets
 uint8_t waitCount = 0;

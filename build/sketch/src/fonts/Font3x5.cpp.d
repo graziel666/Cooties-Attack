@@ -1,5 +1,5 @@
-c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\cooties.ino.cpp.o: \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\cooties.ino.cpp \
+c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.cpp.o: \
+ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.cpp \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Arduino.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/binary.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/WCharacter.h \
@@ -14,19 +14,14 @@ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\cooties.ino.cpp.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/USBCore.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-promicro/pins_arduino.h \
  c:\users\diego\appdata\local\arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\variants\arduboy-leonardo\pins_arduino.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\general.h \
+ C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Sprites.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Arduboy2.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\EEPROM\src/EEPROM.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Arduboy2Core.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Arduboy2Audio.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Arduboy2Beep.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Sprites.h \
- C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/Arduboy2.h \
- C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesCommon.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesB.h \
+ C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesCommon.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Print.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src/fonts/Font3x5.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\sprites.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\structures.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\game.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\enemy.h
+ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.h

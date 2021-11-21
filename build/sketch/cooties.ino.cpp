@@ -69,20 +69,20 @@ void loop()
     //just test
 
     //points
-    arduboy.setCursor(0, 0);
-    arduboy.print("points: ");
-    arduboy.setCursor(8*6, 0);
-    arduboy.print(hitCount);
+    font3x5.setCursor(0, 0);
+    font3x5.print("Points: ");
+    font3x5.setCursor(8*3, 0);
+    font3x5.print(hitCount);
     //life
-    arduboy.setCursor(0, 8);
-    arduboy.print("Life: ");
-    arduboy.setCursor(8*6, 8);
-    arduboy.print(hero.life);
+    font3x5.setCursor(0, 6);
+    font3x5.print("Life: ");
+    font3x5.setCursor(6*3, 6);
+    font3x5.print(hero.life);
     //level
-    arduboy.setCursor(0, 16);
-    arduboy.print("level");
-    arduboy.setCursor(8*6, 16);
-    arduboy.print(level);
+    font3x5.setCursor(0, 12);
+    font3x5.print("Level: ");
+    font3x5.setCursor(7*3, 12);
+    font3x5.print(level);
     //arduboy.print(cootie->collide);
 
     arduboy.display();

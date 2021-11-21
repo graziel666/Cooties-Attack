@@ -25,6 +25,11 @@
     "Includepath": null
   },
   {
+    "Sourcefile": "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\build\\sketch\\src\\fonts\\Font3x5.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
     "Sourcefile": "C:\\Users\\diego\\AppData\\Local\\Arduino15\\packages\\arduboy-homemade\\hardware\\avr\\1.2.9\\libraries\\Arduboy2\\src\\Arduboy2.cpp",
     "Include": "",
     "Includepath": null

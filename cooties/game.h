@@ -3,6 +3,7 @@
 
 Arduboy2 arduboy;
 Sprites sprite;
+Font3x5 font3x5 = Font3x5(8);
 
 
 uint8_t level=0;
@@ -12,6 +13,9 @@ uint8_t level=0;
 
 
 bool facingUp;
+
+//declarations
+void setLevel();
  
 uint16_t hitCount = 0;
 uint16_t enemyHit = 0;
@@ -183,7 +187,7 @@ void drawBullets() {
   }
 }
 
-void setLevel(){
+/*void setLevel(){ //test
   if (level ==5 && targets < maxTargets) {
     ++targets;
   }
@@ -195,8 +199,8 @@ void setLevel(){
   }
   if (level ==20 && targets < maxTargets) {
     ++targets;
-  }*/
-}
+  }
+}*/
 
 void checkCollisions() {
   for (uint8_t i = 0; i < targets; i++){
@@ -205,14 +209,14 @@ void checkCollisions() {
           setLevel();
           cootie[i].enable=false;
           
-          if (maxLife<6){
-            ++maxLife;
-          }
+          //if (maxLife<6){
+          //  ++maxLife;
+          //}
           
           ++level;
           
           
-          cootie[i].life =maxLife;
+          //cootie[i].life =maxLife;
         }
 
 
@@ -236,7 +240,9 @@ void checkCollisions() {
     for (uint8_t bulletNum = 0; bulletNum < bullets; ++bulletNum) {
       if (hero.iframe==0 && arduboy.collide(bullet[bulletNum], cootie[i])) {
         ++hitCount;
-        --cootie[i].life;
+         if (cootie[i].life >0){
+          --cootie[i].life;
+         } 
         bullet[bulletNum].x = bulletOff;  // Set bullet as unused
 
         

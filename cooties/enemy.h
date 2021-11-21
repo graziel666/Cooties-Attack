@@ -20,9 +20,12 @@ void drawCooties(){
     for (uint8_t i = 0; i < targets; i++) {
         if (!cootie[i].enable) {
             uint8_t pos = random(0, 48);
+            cootie[i].life =maxLife;
+            
             cootie[i].enable = true;  
             cootie[i].x = xStart[pos]; 
             cootie[i].y = yStart[pos]; 
+            
             break;
         }
     }
@@ -62,6 +65,34 @@ void moveEnemy(){
           }
       }
   }
+}
+
+void setLevel(){
+  if (level ==5 && targets < maxTargets) {
+    //++targets;
+    if (maxLife<6){
+      ++maxLife;
+    }
+  }
+  if (level ==10 && targets < maxTargets) {
+    //++targets;
+    if (maxLife<6){
+      ++maxLife;
+    }
+  }
+  if (level ==15 && targets < maxTargets) {
+    //++targets;
+    if (maxLife<6){
+      ++maxLife;
+    }
+  }
+  if (level ==20 && targets < maxTargets) {
+    //++targets;
+    if (maxLife<6){
+      ++maxLife;
+    }
+  }
+  
 }
 
 
