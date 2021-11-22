@@ -1,6 +1,6 @@
 {
     "version": 4,
-    "configurations": [
+    "configurations": [ 
         {
             "name": "Arduino",
             "compilerPath": "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\bin\\avr-g++",
