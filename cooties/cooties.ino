@@ -64,17 +64,17 @@ void loop()
     //points
     font3x5.setCursor(0, 0);
     font3x5.print("Points: ");
-    font3x5.setCursor(8*3, 0);
+    font3x5.setCursor(9*3, 0);
     font3x5.print(hitCount);
     //life
     font3x5.setCursor(0, 6);
     font3x5.print("Life: ");
-    font3x5.setCursor(6*3, 6);
+    font3x5.setCursor(7*3, 6);
     font3x5.print(hero.life);
     //level
     font3x5.setCursor(0, 12);
     font3x5.print("Level: ");
-    font3x5.setCursor(7*3, 12);
+    font3x5.setCursor(8*3, 12);
     font3x5.print(level);
     //arduboy.print(cootie->collide);
 

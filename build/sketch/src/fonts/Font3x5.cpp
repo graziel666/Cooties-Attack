@@ -11,6 +11,7 @@
 
 #define CHAR_EXCLAMATION 33
 #define CHAR_PERIOD 46
+#define CHAR_COLON 58
 #define CHAR_LETTER_A 65
 #define CHAR_LETTER_Z 90
 #define CHAR_LETTER_A_LOWER 97
@@ -22,10 +23,12 @@
   #define FONT_EXCLAMATION_INDEX 62
   #define FONT_PERIOD_INDEX 63
   #define FONT_NUMBER_INDEX 52
+  #define FONT_COLON_INDEX 64
 #else
   #define FONT_EXCLAMATION_INDEX 36
   #define FONT_PERIOD_INDEX 37
   #define FONT_NUMBER_INDEX 26
+  #define FONT_COLON_INDEX 27
 #endif
 
 const uint8_t PROGMEM font_images[] = {
@@ -79,7 +82,7 @@ const uint8_t PROGMEM font_images[] = {
   // #74 Letter 'J'.
   0x10,  // ░░░▓░░░░
   0x10,  // ░░░▓░░░░
-  0x1F,  // ░░░▓▓▓▓▓
+  0x1F,  // ░░░▓▓▓▓▓ //10
 
   // #75 Letter 'K'.
   0x1F,  // ░░░▓▓▓▓▓
@@ -129,7 +132,7 @@ const uint8_t PROGMEM font_images[] = {
   // #84 Letter 'T'.
   0x01,  // ░░░░░░░▓
   0x1F,  // ░░░▓▓▓▓▓
-  0x01,  // ░░░░░░░▓
+  0x01,  // ░░░░░░░▓ //20
 
   // #85 Letter 'U'.
   0x1F,  // ░░░▓▓▓▓▓
@@ -168,7 +171,7 @@ const uint8_t PROGMEM font_images[] = {
     0x12,  // ░░░▓░░▓░
     0x1E,  // ░░░▓▓▓▓░
 
-    // #98 Letter 'b'.
+    // #98 Letter 'b'.  //27
     0x1F,  // ░░░▓▓▓▓▓
     0x12,  // ░░░▓░░▓░
     0x0C,  // ░░░░▓▓░░
@@ -184,9 +187,9 @@ const uint8_t PROGMEM font_images[] = {
     0x1F,  // ░░░▓▓▓▓▓
 
     // #101 Letter 'e'.
-    0x0C,  // ░░░░▓▓░░
+    0x0C,  // ░░░░▓▓░░ //30
     0x1A,  // ░░░▓▓░▓░
-    0x14,  // ░░░▓░▓░░
+    0x14,  // ░░░▓░▓░░ //30
 
     // #102 Letter 'f'.
     0x04,  // ░░░░░▓░░
@@ -236,7 +239,7 @@ const uint8_t PROGMEM font_images[] = {
     // #111 Letter 'o'.
     0x1E,  // ░░░▓▓▓▓░
     0x12,  // ░░░▓░░▓░
-    0x1E,  // ░░░▓▓▓▓░
+    0x1E,  // ░░░▓▓▓▓░  //40
 
     // #112 Letter 'p'.
     0x3E,  // ░░▓▓▓▓▓░
@@ -286,7 +289,7 @@ const uint8_t PROGMEM font_images[] = {
     // #121 Letter 'y'.
     0x2E,  // ░░▓░▓▓▓░
     0x28,  // ░░▓░▓░░░
-    0x1E,  // ░░░▓▓▓▓░
+    0x1E,  // ░░░▓▓▓▓░ //50
 
     // #122 Letter 'z'.
     0x1A,  // ░░░▓▓░▓░
@@ -313,7 +316,7 @@ const uint8_t PROGMEM font_images[] = {
   // #51 Number '3'.
   0x11,  // ░░░▓░░░▓
   0x15,  // ░░░▓░▓░▓
-  0x1F,  // ░░░▓▓▓▓▓
+  0x1F,  // ░░░▓▓▓▓▓  //60
 
   // #52 Number '4'.
   0x07,  // ░░░░░▓▓▓
@@ -338,7 +341,7 @@ const uint8_t PROGMEM font_images[] = {
   // #56 Number '8'.
   0x1F,  // ░░░▓▓▓▓▓
   0x15,  // ░░░▓░▓░▓
-  0x1F,  // ░░░▓▓▓▓▓
+  0x1F,  // ░░░▓▓▓▓▓ //65
 
   // #57 Number '9'.
   0x17,  // ░░░▓░▓▓▓
@@ -354,10 +357,10 @@ const uint8_t PROGMEM font_images[] = {
   0x00,  // ░░░░░░░░
   0x10,  // ░░░▓░░░░
   0x00,  // ░░░░░░░░
-  // double point
+  // #27 Symbol ':'
   0x00, // ░░░▓░░░░
   0x05, // ░░░░░░░░
-  0x00  // ░░░▓░░░░
+  0x00  // ░░░▓░░░░  //69
 
 };
 
@@ -415,7 +418,9 @@ void Font3x5::printChar(const char c, const int8_t x, int8_t y) {
     case CHAR_PERIOD:
       idx = FONT_PERIOD_INDEX;
       break;
-
+    case CHAR_COLON:
+      idx = FONT_COLON_INDEX;
+      break;
   }
 
   if (idx > -1) {
