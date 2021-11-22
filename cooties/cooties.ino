@@ -76,7 +76,6 @@ void loop()
     font3x5.print("Level: ");
     font3x5.setCursor(8*3, 12);
     font3x5.print(level);
-    //arduboy.print(cootie->collide);
 
     arduboy.display();
 }

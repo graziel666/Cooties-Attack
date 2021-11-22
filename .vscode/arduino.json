@@ -1,0 +1,7 @@
+{
+    "sketch": "cooties\\cooties.ino",
+    "configuration": "based_on=promicro,boot=org,core=arduboy-core,display=ssd1306,flashselect=rx",
+    "board": "arduboy-homemade:avr:arduboy-homemade",
+    "port": "COM12",
+    "output": "../build"
+}
