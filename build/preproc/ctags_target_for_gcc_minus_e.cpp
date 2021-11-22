@@ -1,5 +1,5 @@
-# 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\cooties.ino"
-# 2 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\cooties.ino" 2
+# 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
+# 2 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino" 2
 
 
 void setup()
@@ -77,7 +77,6 @@ void loop()
     font3x5.print("Level: ");
     font3x5.setCursor(8*3, 12);
     font3x5.print(level);
-    //arduboy.print(cootie->collide);
 
     arduboy.display();
 }

@@ -1,4 +1,4 @@
-c:\Users\diego\OneDrive\Escritorio\arduboy\build\core\CDC.cpp.o: \
+c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\core\CDC.cpp.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\CDC.cpp \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\USBAPI.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\Arduino.h \

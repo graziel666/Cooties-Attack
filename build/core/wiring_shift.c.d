@@ -1,4 +1,4 @@
-c:\Users\diego\OneDrive\Escritorio\arduboy\build\core\wiring_shift.c.o: \
+c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\core\wiring_shift.c.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\wiring_shift.c \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\wiring_private.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\Arduino.h \

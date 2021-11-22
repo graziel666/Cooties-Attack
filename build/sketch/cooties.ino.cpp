@@ -1,13 +1,13 @@
 #include <Arduino.h>
-#line 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\cooties.ino"
+#line 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 #include "general.h"
 
 
-#line 4 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\cooties.ino"
+#line 4 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 void setup();
-#line 27 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\cooties.ino"
+#line 27 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 void loop();
-#line 4 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\cooties.ino"
+#line 4 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 void setup()
 {
 
@@ -83,7 +83,6 @@ void loop()
     font3x5.print("Level: ");
     font3x5.setCursor(8*3, 12);
     font3x5.print(level);
-    //arduboy.print(cootie->collide);
 
     arduboy.display();
 }

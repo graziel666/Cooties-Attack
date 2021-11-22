@@ -1,4 +1,4 @@
-c:\Users\diego\OneDrive\Escritorio\arduboy\build\libraries\Arduboy2\SpritesB.cpp.o: \
+c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\libraries\Arduboy2\SpritesB.cpp.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src\SpritesB.cpp \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src\SpritesB.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src\Arduboy2.h \

@@ -1,4 +1,4 @@
-c:\Users\diego\OneDrive\Escritorio\arduboy\build\core\HardwareSerial.cpp.o: \
+c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\core\HardwareSerial.cpp.o: \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\HardwareSerial.cpp \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\Arduino.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy\binary.h \

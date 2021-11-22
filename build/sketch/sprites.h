@@ -1,4 +1,4 @@
-#line 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\sprites.h"
+#line 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\sprites.h"
 #pragma once
 
 const unsigned char PROGMEM hero_sp[] =

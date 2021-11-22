@@ -1,4 +1,4 @@
-#line 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\cooties\\structures.h"
+#line 1 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\structures.h"
 #pragma once
 
 #include "general.h"

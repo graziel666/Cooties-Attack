@@ -1,5 +1,5 @@
-c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.cpp.o: \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.cpp \
+c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\src\fonts\Font3x5.cpp.o: \
+ c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\src\fonts\Font3x5.cpp \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Arduino.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/binary.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/WCharacter.h \
@@ -24,4 +24,4 @@ c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.cpp.o:
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesB.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesCommon.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Print.h \
- c:\Users\diego\OneDrive\Escritorio\arduboy\build\sketch\src\fonts\Font3x5.h
+ c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\src\fonts\Font3x5.h
