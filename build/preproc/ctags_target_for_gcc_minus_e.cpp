@@ -41,6 +41,8 @@ void loop()
     moveBullets();
     drawBullets();
 
+    setLife();
+
     if (waitCount != 0) {
       --waitCount;
     }
@@ -50,8 +52,12 @@ void loop()
     }
 
     //draw
+    //hero
     sprite.drawPlusMask(hero.x,hero.y,hero_sp, hero.frame);
 
+    //life
+    sprite.drawPlusMask(arduboy.width()-28,0,hearts_sp, hearts_frame);
+    arduboy.fillRect(arduboy.width()-28,0,hide_w,8,2);
     //test
     //arduboy.drawRect(targetX, targetY, targetWidth+5, targetHeight+5);
 
@@ -65,17 +71,21 @@ void loop()
     //points
     font3x5.setCursor(0, 0);
     font3x5.print("Points: ");
-    font3x5.setCursor(9*3, 0);
+    //font3x5.setCursor(128-3*12, 0);
+    //font3x5.print("Points: ");
+    //font3x5.setCursor(128-8, 0);
+    //font3x5.print(hitCount);
+    font3x5.setCursor(3*10, 0);
     font3x5.print(hitCount);
     //life
-    font3x5.setCursor(0, 6);
-    font3x5.print("Life: ");
-    font3x5.setCursor(7*3, 6);
-    font3x5.print(hero.life);
+    //font3x5.setCursor(0, 6);
+    //font3x5.print("Life: ");
+    //font3x5.setCursor(7*3, 6);
+    //font3x5.print(hero.life);
     //level
-    font3x5.setCursor(0, 12);
+    font3x5.setCursor((arduboy.width()/2)-6, 0);
     font3x5.print("Level: ");
-    font3x5.setCursor(8*3, 12);
+    font3x5.setCursor(((arduboy.width()/2)-6)+8*3, 0);
     font3x5.print(level);
 
     arduboy.display();

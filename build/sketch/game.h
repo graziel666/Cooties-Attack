@@ -20,6 +20,8 @@ void setLevel();
  
 uint16_t hitCount = 0;
 uint16_t enemyHit = 0;
+uint8_t hearts_frame = 0;
+uint8_t hide_w = 0;
 
 uint8_t findUnusedBullet() {
   uint8_t bulletNum;
@@ -35,6 +37,13 @@ uint8_t findUnusedBullet() {
 
 //set sprite direction and animation
 void anim(){
+
+  if (arduboy.everyXFrames(10)){
+    if (hearts_frame < 1){
+      ++hearts_frame;
+    } else {hearts_frame=0;}
+      
+  }
 
     if (arduboy.pressed(UP_BUTTON) or arduboy.pressed(DOWN_BUTTON)
         or arduboy.pressed(LEFT_BUTTON)or arduboy.pressed(RIGHT_BUTTON)){
@@ -253,6 +262,18 @@ void checkCollisions() {
     }
   } //test
 
+}
+
+//check life and hide hearts
+void setLife(){
+  if (hero.life <= 3){
+    if (hero.life==2){
+      hide_w = 9;
+    }
+    if (hero.life==1){
+      hide_w = 17;
+    }
+  }
 }
 
 
