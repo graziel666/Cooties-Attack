@@ -77,7 +77,7 @@ void input(){
 
 
     if (arduboy.pressed(UP_BUTTON)){
-        if (hero.y>0){
+        if (hero.y>10){
             hero.y--;
             hero.direction = Direction::Up;
             facingUp =  true;
@@ -273,6 +273,7 @@ void setLife(){
     if (hero.life==1){
       hide_w = 17;
     }
+
   }
 }
 

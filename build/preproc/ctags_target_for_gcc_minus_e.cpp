@@ -56,6 +56,8 @@ void loop()
     sprite.drawPlusMask(hero.x,hero.y,hero_sp, hero.frame);
 
     //life
+    arduboy.fillRect(0,0,128,10,0 /**< Color value for an unlit pixel for draw functions. */);
+    arduboy.fillRect(0,10,128,1,1 /**< Color value for a lit pixel for draw functions. */);
     sprite.drawPlusMask(arduboy.width()-28,0,hearts_sp, hearts_frame);
     arduboy.fillRect(arduboy.width()-28,0,hide_w,8,2);
     //test
@@ -71,17 +73,9 @@ void loop()
     //points
     font3x5.setCursor(0, 0);
     font3x5.print("Points: ");
-    //font3x5.setCursor(128-3*12, 0);
-    //font3x5.print("Points: ");
-    //font3x5.setCursor(128-8, 0);
-    //font3x5.print(hitCount);
     font3x5.setCursor(3*10, 0);
     font3x5.print(hitCount);
-    //life
-    //font3x5.setCursor(0, 6);
-    //font3x5.print("Life: ");
-    //font3x5.setCursor(7*3, 6);
-    //font3x5.print(hero.life);
+
     //level
     font3x5.setCursor((arduboy.width()/2)-6, 0);
     font3x5.print("Level: ");
