@@ -4,6 +4,13 @@
 #include "general.h"
 
 
+enum class State : uint8_t
+{
+	Title, Game, GameOver
+};
+
+State state=State::Title;
+
 enum class Direction : uint8_t
 {
 	Up, Right, Down, Left

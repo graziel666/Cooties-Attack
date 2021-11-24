@@ -19,8 +19,14 @@ void setLevel();
  
 uint16_t hitCount = 0;
 uint16_t enemyHit = 0;
+
+//life
 uint8_t hearts_frame = 0;
 uint8_t hide_w = 0;
+
+//title screen
+uint8_t title_frame = 0;
+uint8_t push_frame = 0;
 
 uint8_t findUnusedBullet() {
   uint8_t bulletNum;
@@ -37,10 +43,22 @@ uint8_t findUnusedBullet() {
 //set sprite direction and animation
 void anim(){
 
+  
+
   if (arduboy.everyXFrames(10)){
+    if (title_frame<2){
+      ++title_frame;
+    } else{title_frame=0;}
+
+    if (push_frame<1){
+      ++push_frame;
+    } else{push_frame=0;}
+
     if (hearts_frame < 1){
       ++hearts_frame;
     } else {hearts_frame=0;}
+
+    
       
   }
 
@@ -69,10 +87,25 @@ void anim(){
 }
 //controls
 void input(){
-
+    arduboy.pollButtons();
     anim();
 
-    arduboy.pollButtons();
+    if (state == State::Title or state == State::GameOver){
+      if (arduboy.justPressed(A_BUTTON)){
+        //reset stats
+        hero.life=3;
+        hitCount=0;
+        level=1;
+
+        //reset cooties
+        for (uint8_t i = 0; i < targets; i++){
+          cootie[i].enable=false;
+        }
+
+        //change state
+        state = State::Game;
+      }
+    }
 
 
     if (arduboy.pressed(UP_BUTTON)){
@@ -103,6 +136,7 @@ void input(){
     }
 
     if (arduboy.pressed(A_BUTTON)) {
+    
     if (waitCount == 0) {
       
       uint8_t bulletNum = findUnusedBullet();
@@ -233,8 +267,14 @@ void checkCollisions() {
     if (arduboy.collide(cootie[i],hero)&& hero.iframe==0){
       ++enemyHit;
       hero.iframe=50;
+
+      arduboy.invert(true);
+      delay(20);
+      arduboy.invert(false);
       if (hero.life>0){
         --hero.life;
+        
+
         if (hitCount>10){
           hitCount = hitCount-10;
         }
@@ -266,11 +306,18 @@ void checkCollisions() {
 //check life and hide hearts
 void setLife(){
   if (hero.life <= 3){
+    if (hero.life ==3){
+      hide_w=0;
+    }
     if (hero.life==2){
       hide_w = 9;
     }
     if (hero.life==1){
       hide_w = 17;
+    }
+
+    if (hero.life==0){
+      state = State::GameOver;
     }
 
   }
