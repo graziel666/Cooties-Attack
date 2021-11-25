@@ -4,6 +4,8 @@
 Arduboy2 arduboy;
 Sprites sprite;
 Font3x5 font3x5 = Font3x5(8);
+//BeepPin1 beep;
+ArduboyTones sound(arduboy.audio.enabled);
 
 
 uint8_t level=0;
@@ -94,8 +96,11 @@ void input(){
       if (arduboy.justPressed(A_BUTTON)){
         //reset stats
         hero.life=3;
+        hero.x=64;
+        hero.y=32;
         hitCount=0;
         level=1;
+        
 
         //reset cooties
         for (uint8_t i = 0; i < targets; i++){
@@ -148,6 +153,7 @@ void input(){
 
         bullet[bulletNum].x = hero.x;
         bullet[bulletNum].y = hero.y + 3; // Part way down the player
+        sound.tone(NOTE_B5, 10);
         waitCount = bulletWait; // Start the delay counter for the next bullet
       }
     }
@@ -166,6 +172,7 @@ void initBullets(){
 void initEnemies(){
       // Init all the enemies
   for (uint8_t i = 0; i < targets; ++i) {
+    
     cootie[i].width = 9;
     cootie[i].height = 9;
     cootie[i].enable = false;
@@ -267,6 +274,9 @@ void checkCollisions() {
     if (arduboy.collide(cootie[i],hero)&& hero.iframe==0){
       ++enemyHit;
       hero.iframe=50;
+
+      //beep.tone(beep.freq(100),30);
+      sound.tone(NOTE_C5, 10);
 
       arduboy.invert(true);
       delay(20);
