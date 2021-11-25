@@ -21,6 +21,11 @@
   },
   {
     "Sourcefile": "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\build\\sketch\\cooties.ino.cpp",
+    "Include": "ArduboyTones.h",
+    "Includepath": "C:\\Users\\diego\\AppData\\Local\\Arduino15\\packages\\arduboy-homemade\\hardware\\avr\\1.2.9\\libraries\\ArduboyTones\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\build\\sketch\\cooties.ino.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -71,6 +76,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\diego\\AppData\\Local\\Arduino15\\packages\\arduboy-homemade\\hardware\\avr\\1.2.9\\libraries\\Arduboy2\\src\\glcdfont.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\diego\\AppData\\Local\\Arduino15\\packages\\arduboy-homemade\\hardware\\avr\\1.2.9\\libraries\\ArduboyTones\\src\\ArduboyTones.cpp",
     "Include": "",
     "Includepath": null
   }

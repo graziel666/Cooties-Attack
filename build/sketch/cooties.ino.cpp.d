@@ -25,6 +25,8 @@ c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\co
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesCommon.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\Arduboy2\src/SpritesB.h \
  C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\cores\arduboy/Print.h \
+ C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\ArduboyTones\src/ArduboyTones.h \
+ C:\Users\diego\AppData\Local\Arduino15\packages\arduboy-homemade\hardware\avr\1.2.9\libraries\ArduboyTones\src/ArduboyTonesPitches.h \
  c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\src/fonts/Font3x5.h \
  c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\sprites.h \
  c:\Users\diego\OneDrive\Escritorio\arduboy\Github\Cooties-Attack\build\sketch\structures.h \

@@ -5,9 +5,11 @@ void setup()
 {
 
     arduboy.begin();
+    //beep.begin();
     arduboy.setFrameRate(60);
     arduboy.clear();
     arduboy.display();
+    
 
     initBullets();
     initEnemies();
@@ -27,11 +29,12 @@ void setup()
 }
 
 void loop()
-{   
+{   //  beep.tone(beep.freq(1000),120);
     if (!(arduboy.nextFrame())) return;
-    
+    //beep.timer();
     arduboy.clear();
     input();
+    
 
     switch (state) {
 

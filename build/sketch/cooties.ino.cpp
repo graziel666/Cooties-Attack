@@ -5,16 +5,18 @@
 
 #line 4 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 void setup();
-#line 29 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
+#line 31 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 void loop();
 #line 4 "c:\\Users\\diego\\OneDrive\\Escritorio\\arduboy\\Github\\Cooties-Attack\\cooties\\cooties.ino"
 void setup()
 {
 
     arduboy.begin();
+    //beep.begin();
     arduboy.setFrameRate(60);
     arduboy.clear();
     arduboy.display();
+    
 
     initBullets();
     initEnemies();
@@ -34,11 +36,12 @@ void setup()
 }
 
 void loop()
-{   
+{   //  beep.tone(beep.freq(1000),120);
     if (!(arduboy.nextFrame())) return;
-    
+    //beep.timer();
     arduboy.clear();
     input();
+    
 
     switch (state) {
 
