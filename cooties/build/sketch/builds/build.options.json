@@ -1,0 +1,13 @@
+#line 1 "/home/diego/Cooties-Attack/cooties/builds/build.options.json"
+{
+  "additionalFiles": "..,..,..,..,../../..,../../..,..",
+  "builtInLibrariesFolders": "",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "build.warn_data_percentage=75",
+  "fqbn": "arduboy-homemade:avr:arduboy-homemade:based_on=promicro_alt,boot=cathy3k,core=arduboy-core,display=sh1106,flashselect=rx",
+  "hardwareFolders": "/home/diego/.arduino15/packages",
+  "otherLibrariesFolders": "/home/diego/Arduino/libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "/home/diego/Cooties-Attack/cooties/cooties.ino"
+}

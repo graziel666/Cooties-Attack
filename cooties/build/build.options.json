@@ -1,0 +1,12 @@
+{
+  "additionalFiles": "../..,../..,../../..,../../..,../../..,../../..,../../..,../../..,../../../../..,../../../../..,../../..,..,..,..,..,../../..,../../..,..",
+  "builtInLibrariesFolders": "",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "build.warn_data_percentage=75",
+  "fqbn": "arduboy-homemade:avr:arduboy-homemade:boot=cathy3k,flashselect=rx,contrast=normal,based_on=promicro_alt,core=arduboy-core,display=sh1106",
+  "hardwareFolders": "/home/diego/.arduino15/packages",
+  "otherLibrariesFolders": "/home/diego/Arduino/libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "/home/diego/Cooties-Attack/cooties/cooties.ino"
+}

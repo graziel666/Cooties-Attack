@@ -1,3 +1,5 @@
+#include <Arduino.h>
+#line 1 "/home/diego/Github/Cooties-Attack/cooties/cooties.ino"
 #include "general.h"
 
 
@@ -90,7 +92,9 @@ void loop()
           
 
           checkCollisions();
+          //enemyHealth();
 
+          //just test
 
           //points
           font3x5.setCursor(0, 0);
@@ -122,3 +126,4 @@ void loop()
 
     arduboy.display();
 }
+
